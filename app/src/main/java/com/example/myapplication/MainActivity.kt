@@ -2,6 +2,7 @@ package com.example.myapplication
 
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -35,12 +36,15 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     override fun onInit(status: Int) {
         if (status == TextToSpeech.SUCCESS) {
+            Log.e("fuck","fuckfuck")
             val result = textToSpeech!!.setLanguage(Locale.CHINESE)
             if (result == TextToSpeech.LANG_MISSING_DATA
                 || result == TextToSpeech.LANG_NOT_SUPPORTED
             ) {
                 Toast.makeText(this, "数据丢失或不支持", Toast.LENGTH_SHORT).show()
             }
+        }else{
+            Log.e("fuck","fuckfuc2222k  "+status)
         }
     }
 
